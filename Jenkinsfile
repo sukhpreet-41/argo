@@ -41,7 +41,7 @@ pipeline{
 
                     // sh "docker build . " + "-t" ${IMAGE_NAME} " + "-f " + "/argo/Dockerfile" 
 
-                    sh "docker build . -t "${IMAGE_NAME}" -f /var/lib/jenkins/workspace/argoci/argo/Dockerfile"
+                    sh "docker build . -t " + "${IMAGE_NAME}" + " -f /var/lib/jenkins/workspace/argoci/argo/Dockerfile"
                 }
             }
         }
