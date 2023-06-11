@@ -36,12 +36,23 @@ pipeline{
 
             steps{
                 script{
-                    // 
                     // docker_image = "${APP_NAME}" + "/" + docker.build "${IMAGE_NAME}"
-
                     // sh "docker build . " + "-t" ${IMAGE_NAME} " + "-f " + "/argo/Dockerfile" 
 
                     sh "docker build . -t " + "${IMAGE_NAME}" + " -f /var/lib/jenkins/workspace/argoci/argo/Dockerfile"
+                }
+            }
+        }
+        stage('Push docker image') {
+
+            steps{
+                script{
+
+                    docker.withRegistry('',REGISTRY_CREDS){
+                        docker_image.Push("$BUILD_NUMBER")
+                        docker_image.Push("latest")
+                    }
+
                 }
             }
         }
