@@ -24,7 +24,7 @@ pipeline{
             steps{
                 script{
                     git credentialsId: 'github'
-                    url: 'https://github.com/sukhpreet-41/argoCD_project.git'
+                    url: 'https://github.com/sukhpreet-41/argo.git'
                     branch: 'main'
                 }
             }
