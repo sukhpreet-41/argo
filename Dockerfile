@@ -1,5 +1,5 @@
 FROM python:3.9
-RUN pip install flask
 WORKDIR /app
-COPY app.py .
+RUN pip install flask
+COPY . .
 ENTRYPOINT ["python", "app.py"]
