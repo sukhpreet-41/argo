@@ -29,5 +29,13 @@ pipeline{
                 }
             }
         }
+        stage('Build docker image') {
+
+            steps{
+                script{
+                    docker_image = docker.build "${IMAGE_NAME}"
+                }
+            }
+        }
     }
 }
