@@ -1,7 +1,7 @@
 pipeline{
 
     agent any
-    enviornment{
+    enviornment {
         DOCKERHUB_USERNAME = "sukhpreet2002"
         APP_NAME = "argoCD_project"
         IMAGE_TAG = "${BUILD_NUMBER}"
