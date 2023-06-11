@@ -24,8 +24,10 @@ pipeline{
             steps{
                 script{
                     // git credentialsId: 'github'
-                    url: 'https://github.com/sukhpreet-41/argo.git'
-                    branch: 'main'
+                    // url: 'https://github.com/sukhpreet-41/argo.git'
+                    // branch: 'main'
+
+                    sh "git clone https://github.com/sukhpreet-41/argo.git"
                 }
             }
         }
