@@ -50,7 +50,9 @@ pipeline{
 
                     docker.withRegistry('',REGISTRY_CREDS){
 
-                        sh 'docker push ' + "${IMAGE_NAME}"
+                        sh 'docker push ' + "${IMAGE_NAME}" + ":" + "${BUILD_NUMBER}"
+                        sh 'docker push ' + "${IMAGE_NAME}" + 'latest'
+
                     }
 
                 }
