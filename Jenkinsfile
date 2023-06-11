@@ -4,7 +4,7 @@ pipeline{
     enviornment{
         DOCKERHUB_USERNAME = "sukhpreet2002"
         APP_NAME = "argoCD_project"
-        IMAGE_TAG = "$(BUILD_NUMBER)"
+        IMAGE_TAG = "${BUILD_NUMBER}"
         IMAGE_NAME = "${DOCKERHUB_USERNAME}" + "/" + "${APP_NAME}"
         REGISTRY_CREDS = 'dockerhub'
     }
