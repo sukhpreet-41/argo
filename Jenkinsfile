@@ -19,16 +19,16 @@ pipeline{
             }
         }
 
-        // stage('Checkout SCM') {
+        stage('Checkout SCM') {
 
-        //     steps{
-        //         script{
-        //             git credentialsId: 'github'
-        //             url: 'https://github.com/sukhpreet-41/argo.git'
-        //             branch: 'main'
-        //         }
-        //     }
-        // }
+            steps{
+                script{
+                    // git credentialsId: 'github'
+                    url: 'https://github.com/sukhpreet-41/argo.git'
+                    branch: 'main'
+                }
+            }
+        }
         stage('Build docker image') {
 
             steps{
