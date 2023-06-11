@@ -28,6 +28,7 @@ pipeline{
                     // branch: 'main'
 
                     sh "git clone https://github.com/sukhpreet-41/argo.git"
+                    sh "cd argo"
                 }
             }
         }
