@@ -39,7 +39,7 @@ pipeline{
                     // docker_image = "${APP_NAME}" + "/" + docker.build "${IMAGE_NAME}"
                     // sh "docker build . " + "-t" ${IMAGE_NAME} " + "-f " + "/argo/Dockerfile" 
 
-                    sh "docker build . -t " + "${IMAGE_NAME}" + "${BUILD_NUMBER}" + " -f /var/lib/jenkins/workspace/argoci/argo/Dockerfile"
+                    sh "docker build . -t " + "${IMAGE_NAME}" + ":" + "${BUILD_NUMBER}" + " -f /var/lib/jenkins/workspace/argoci/argo/Dockerfile"
                 }
             }
         }
