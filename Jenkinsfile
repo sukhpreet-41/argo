@@ -37,7 +37,9 @@ pipeline{
             steps{
                 script{
                     // 
-                    docker_image = "${APP_NAME}" + "/" + docker.build "${IMAGE_NAME}"
+                    // docker_image = "${APP_NAME}" + "/" + docker.build "${IMAGE_NAME}"
+
+                    sh "docker build -t " + "${IMAGE_NAME} " + "argo/Dockerfile" 
                 }
             }
         }
