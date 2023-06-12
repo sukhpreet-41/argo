@@ -80,7 +80,7 @@ pipeline{
                     sh """
 
                     cat deployment.yaml
-                    sed -i "s|sukhpreet2002/argo:v1|sukhpreet2002/argo:${BUILD_NUMBER}|" deployment.yaml
+                    sed -i "s|sukhpreet2002/argo:v1|sukhpreet2002/argo:${BUILD_NUMBER}|" deploymet.yaml
                     cat deployment.yaml
 
                     """
