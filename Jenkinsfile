@@ -40,6 +40,8 @@ pipeline{
                     // sh "docker build . " + "-t" ${IMAGE_NAME} " + "-f " + "/argo/Dockerfile" 
 
                     sh "docker build . -t " + "${IMAGE_NAME}" + ":" + "${BUILD_NUMBER}" + " -f /var/lib/jenkins/workspace/argoci/argo/Dockerfile"
+                    sh "docker build . -t " + "${IMAGE_NAME}" + ":" + "latest" + " -f /var/lib/jenkins/workspace/argoci/argo/Dockerfile"
+
                 }
             }
         }
