@@ -71,25 +71,23 @@ pipeline{
         }
         
 
-        stage('Updating k8s deployment file') {
+        // stage('Updating k8s deployment file') {
 
-            steps{
-                script{
-                    sh """
+        //     steps{
+        //         script{
+        //             sh """
 
-                    cat deployment.yaml
-                    // sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
-                    sed -i "s|sukhpreet2002/argo:v1|sukhpreet2002/argo:${BUILD_NUMBER}|" deployment.yaml
-                    cat deployment.yaml
+        //             cat deployment.yaml
+        //             // sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
+        //             sed -i "s|sukhpreet2002/argo:v1|sukhpreet2002/argo:${BUILD_NUMBER}|" deployment.yaml
+        //             cat deployment.yaml
 
-                    """
+        //             """
                     
 
-                }
-            }
-        }
-
-
+        //         }
+        //     }
+        // }
 
 
 
