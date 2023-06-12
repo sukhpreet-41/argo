@@ -79,9 +79,9 @@ pipeline{
                 script{
                     sh """
 
-                    cat deployment.yaml
+                    cat deploymet.yaml
                     sed -i "s|sukhpreet2002/argo:v1|sukhpreet2002/argo:${BUILD_NUMBER}|" deploymet.yaml
-                    cat deployment.yaml
+                    cat deploymet.yaml
 
                     """
                     
