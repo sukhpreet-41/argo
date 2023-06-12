@@ -40,8 +40,6 @@ pipeline{
                     // sh "docker build . " + "-t" ${IMAGE_NAME} " + "-f " + "/argo/Dockerfile" 
 
                     sh "docker build . -t " + "${IMAGE_NAME}" + ":" + "${BUILD_NUMBER}" + " -f /var/lib/jenkins/workspace/argoci/argo/Dockerfile"
-                    sh "docker build . -t " + "${IMAGE_NAME}" + ":" + "latest" + " -f /var/lib/jenkins/workspace/argoci/argo/Dockerfile"
-
                 }
             }
         }
@@ -73,22 +71,22 @@ pipeline{
         }
         
 
-        stage('Updating k8s deployment file') {
+        // stage('Updating k8s deployment file') {
 
-            steps{
-                script{
-                    sh """
+        //     steps{
+        //         script{
+        //             sh """
 
-                    cat deployment.yaml
-                    sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
-                    cat deployment.yaml
+        //             cat deployment.yaml
+        //             sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
+        //             cat deployment.yaml
 
-                    """
+        //             """
                     
 
-                }
-            }
-        }
+        //         }
+        //     }
+        // }
 
 
 
