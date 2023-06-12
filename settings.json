@@ -2,7 +2,7 @@
     "jenkins-runner.jobs": {
         "argoci": {
             "isDefault": true,
-            "runWith": "jenkins-master",
+            "runWith": ["local", "master"],
             "name": "argoci"
         }
         
