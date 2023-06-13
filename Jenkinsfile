@@ -85,6 +85,25 @@ pipeline{
 
                     """
                     
+                }
+            }
+        }
+
+        stage('push the changes of deployment to github'){
+            steps{
+                script{
+                    sh """
+
+                    git config --global user.name "jenkins commit"
+                    git config --global user.email "jenkins@vscode.com"
+                    git add /var/lib/jenkins/workspace/argoci/argo/deploymet.yaml
+                    git commit -m "updated deployment file"
+                    git push -u origin main
+
+                    """
+                    withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+                        sh "git push https://github.com/sukhpreet-41/argo.git main"
+}
 
                 }
             }
@@ -92,7 +111,7 @@ pipeline{
 
 
 
+
     }
 }
 
-                    // sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
