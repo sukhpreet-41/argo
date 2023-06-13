@@ -100,7 +100,7 @@ pipeline{
                     git add deploymet.yaml
                     git branch -M main
                     git commit -m "updated deployment file"
-                    git push -u origin main
+                    git push -u https://github.com/sukhpreet-41/argo.git main
 
                     """
                     // withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
