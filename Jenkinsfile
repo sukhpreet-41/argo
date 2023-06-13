@@ -102,7 +102,7 @@ pipeline{
 
                     """
                     withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-                        sh "git push https://github.com/sukhpreet-41/argo.git main"
+                        sh "git push -u https://github.com/sukhpreet-41/argo.git main"
 }
 
                 }
