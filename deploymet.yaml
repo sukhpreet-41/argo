@@ -14,9 +14,6 @@ spec:
       containers:
       - name: flask-argo-container
         image: sukhpreet2002/argo:78
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        
         ports:
         - containerPort: 5000
