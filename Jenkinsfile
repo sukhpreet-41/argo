@@ -98,6 +98,7 @@ pipeline{
                     git config --global user.name "jenkins commit"
                     git config --global user.email "jenkins@vscode.com"
                     git add deploymet.yaml
+                    git remote add origin https://github.com/sukhpreet-41/argo.git
                     git branch -M main
                     git commit -m "updated deployment file"
                     git push -u https://github.com/sukhpreet-41/argo.git main
