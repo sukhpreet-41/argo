@@ -93,7 +93,7 @@ pipeline{
             steps{
                 script{
                     sh """
-
+                    git init
                     git config --global user.name "jenkins commit"
                     git config --global user.email "jenkins@vscode.com"
                     git add /var/lib/jenkins/workspace/argoci/argo/deploymet.yaml
