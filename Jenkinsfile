@@ -92,13 +92,18 @@ pipeline{
         stage('push the changes of deployment to github'){
             steps{
                 script{
-                    sh """
-                    cd /var/lib/jenkins/workspace/argoci/argo/
-                    git add deploymet.yaml
-                    git commit -m "updated deployment file"
-                    git push -u origin main
 
-                    """
+                    withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+
+                        sh """
+                        cd /var/lib/jenkins/workspace/argoci/argo/
+                        git add deploymet.yaml
+                        git commit -m "updated deployment file"
+                        git push -u origin main
+
+                        """
+
+                    }
                     // withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
                     //     sh "git push -u origin main"                      git remote add origin https://github.com/sukhpreet-41/argo.git
 
