@@ -93,12 +93,12 @@ pipeline{
             steps{
                 script{
                     sh """
+                    cd /var/lib/jenkins/workspace/argoci/argo/
                     git init
                     git config --global user.name "jenkins commit"
                     git config --global user.email "jenkins@vscode.com"
-                    git add /var/lib/jenkins/workspace/argoci/argo/deploymet.yaml
+                    git add deploymet.yaml
                     git commit -m "updated deployment file"
-                    git push -u origin main
 
                     """
                     withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
