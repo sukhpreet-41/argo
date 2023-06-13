@@ -1,18 +1,1 @@
-{
-    "jenkins-runner.jobs": {
-        "argoci": {
-            "isDefault": true,
-            "runWith": ["local", "master"],
-            "name": "argoci"
-        }
-        
-    },
-    "jenkins-runner.hostConfigs": {
-        "argoci": {
-            "url": "http://localhost:8080",
-            
-            "userCrumbIssuer": true
-        }
-    }
-    
-}
+
