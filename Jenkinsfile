@@ -94,18 +94,21 @@ pipeline{
                 script{
                     sh """
                     cd /var/lib/jenkins/workspace/argoci/argo/
-                    git init
-                    git config --global user.name "jenkins commit"
-                    git config --global user.email "jenkins@vscode.com"
                     git add deploymet.yaml
-                    git remote add origin https://github.com/sukhpreet-41/argo.git
-                    git branch -M main
                     git commit -m "updated deployment file"
-                    git push -u https://github.com/sukhpreet-41/argo.git main
+                    git push -u origin main
 
                     """
                     // withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-                    //     sh "git push -u origin main"
+                    //     sh "git push -u origin main"                      git remote add origin https://github.com/sukhpreet-41/argo.git
+
+                    // git init
+                    // git config --global user.name "jenkins commit"
+                    // git config --global user.email "jenkins@vscode.com"
+                    //                     git branch -M main
+
+
+
                     // }
 
                 }
