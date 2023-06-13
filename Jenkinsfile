@@ -100,7 +100,6 @@ pipeline{
                     git add deploymet.yaml
                     git branch -M main
                     git commit -m "updated deployment file"
-                    git remote add origin https://github.com/sukhpreet-41/argo.git
 
                     """
                     withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
