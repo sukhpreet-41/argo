@@ -100,11 +100,12 @@ pipeline{
                     git add deploymet.yaml
                     git branch -M main
                     git commit -m "updated deployment file"
+                    git push -u origin main
 
                     """
-                    withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-                        sh "git push -u origin main"
-}
+                    // withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+                    //     sh "git push -u origin main"
+                    // }
 
                 }
             }
